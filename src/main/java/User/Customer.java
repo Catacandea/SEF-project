@@ -10,9 +10,9 @@ public class Customer extends User {
 	private Order actualOrder;
 	private ArrayList<Order> totalOrders = new ArrayList<Order>();
 	private String address;
-
+	
 	public Customer(String username, String phoneNumber, String email, String address) {
-		super(username, username, email);
+		super(username, phoneNumber, email);
 		this.setAddress(address);
 	}
 
@@ -31,6 +31,7 @@ public class Customer extends User {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
 
 	public Order getActualOrder() {
 		return actualOrder;

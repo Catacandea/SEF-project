@@ -29,17 +29,17 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="110.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
-            <Text layoutX="112.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <Text layoutX="110.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name" />
-            <Text layoutX="86.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email address" />
-            <Text layoutX="73.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
-            <PasswordField fx:id="passwordCustomerRegister" layoutX="194.0" layoutY="81.0" />
-            <Button layoutX="251.0" layoutY="254.0" mnemonicParsing="false" onAction="#HomePageCustomer" text="Register" />
-            <TextField fx:id="usernameCustomerRegister" layoutX="195.0" layoutY="36.0" />
-            <TextField fx:id="fullnameCustomerRegister" layoutX="195.0" layoutY="121.0" />
-            <TextField fx:id="emailCustomerRegister" layoutX="194.0" layoutY="163.0" />
-            <TextField fx:id="phoneCustomerRegister" layoutX="194.0" layoutY="207.0" />
+            <Text layoutX="110.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <Text layoutX="112.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="86.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email address" />
+            <Text layoutX="81.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+            <PasswordField fx:id="passwordCustomer" layoutX="196.0" layoutY="61.0" />
+            <Button layoutX="252.0" layoutY="269.0" mnemonicParsing="false" onAction="#HomePageCustomer" text="Register" />
+            <TextField fx:id="userCustomer" layoutX="196.0" layoutY="21.0" />
+            <TextField fx:id="emailCustomer" layoutX="196.0" layoutY="116.0" />
+            <TextField fx:id="phoneCustomer" layoutX="196.0" layoutY="180.0" />
+            <TextField fx:id="addressCustomer" layoutX="196.0" layoutY="218.0" />
+            <Text layoutX="117.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
          </children>
       </AnchorPane>
    </center>

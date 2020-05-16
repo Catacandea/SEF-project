@@ -11,9 +11,9 @@
    <top>
       <AnchorPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="40.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Supply Company" wrappingWidth="525.28759765625">
+            <Text layoutX="26.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My products">
                <font>
-                  <Font size="34.0" />
+                  <Font size="42.0" />
                </font>
             </Text>
          </children>
@@ -22,16 +22,11 @@
    <bottom>
       <AnchorPane prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#LogOutButtonClicked" text="Sign out" />
+            <Button layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackSupplyHomeViewButoonClicked" text="Back" />
          </children>
       </AnchorPane>
    </bottom>
    <center>
-      <AnchorPane prefHeight="245.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="94.0" layoutY="52.0" mnemonicParsing="false" onAction="#ViewProductsButtonClicked" text="View my products" />
-            <Button layoutX="94.0" layoutY="145.0" mnemonicParsing="false" text="Timetabe" />
-         </children>
-      </AnchorPane>
+      <AnchorPane prefHeight="245.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

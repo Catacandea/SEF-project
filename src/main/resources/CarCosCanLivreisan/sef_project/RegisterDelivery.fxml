@@ -33,11 +33,11 @@
             <Text layoutX="113.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <Text layoutX="99.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email address" />
             <Text layoutX="96.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
-            <PasswordField layoutX="207.0" layoutY="85.0" />
+            <PasswordField fx:id="passwordDelivery" layoutX="207.0" layoutY="85.0" />
             <Button layoutX="255.0" layoutY="243.0" mnemonicParsing="false" onAction="#HomePageDelivery" text="Register" />
-            <TextField layoutX="207.0" layoutY="39.0" />
-            <TextField layoutX="207.0" layoutY="133.0" />
-            <TextField layoutX="207.0" layoutY="177.0" />
+            <TextField fx:id="userDelivery" layoutX="207.0" layoutY="39.0" />
+            <TextField fx:id="emailDelivery" layoutX="207.0" layoutY="133.0" />
+            <TextField fx:id="phoneDelivery" layoutX="207.0" layoutY="177.0" />
          </children>
       </AnchorPane>
    </center>

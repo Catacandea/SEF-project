@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.Register_Controller">
+   <bottom>
+      <AnchorPane prefHeight="53.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="541.0" layoutY="11.0" mnemonicParsing="false" onAction="#BackRegisterViewButoonClicked" text="Back" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <AnchorPane prefHeight="67.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="14.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register as Supply Company" wrappingWidth="462.291015625">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="282.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="101.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <Text layoutX="103.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="89.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email address" />
+            <Text layoutX="101.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <PasswordField layoutX="207.0" layoutY="83.0" />
+            <Button layoutX="268.0" layoutY="235.0" mnemonicParsing="false" onAction="#HomePageSupply" text="Register" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>

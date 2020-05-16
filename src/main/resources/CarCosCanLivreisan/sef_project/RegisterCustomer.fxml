@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.Register_Controller">
+   <top>
+      <AnchorPane prefHeight="49.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="7.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register as Customer" wrappingWidth="396.9951171875">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="37.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="517.0" layoutY="-1.0" mnemonicParsing="false" onAction="#BackRegisterViewButoonClicked" text="Back" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="110.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <Text layoutX="112.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="110.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name" />
+            <Text layoutX="86.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email address" />
+            <Text layoutX="73.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+            <PasswordField layoutX="194.0" layoutY="81.0" />
+            <Button layoutX="251.0" layoutY="254.0" mnemonicParsing="false" onAction="#HomePageCustomer" text="Register" />
+            <TextField layoutX="195.0" layoutY="36.0" />
+            <TextField layoutX="195.0" layoutY="121.0" />
+            <TextField layoutX="194.0" layoutY="163.0" />
+            <TextField layoutX="194.0" layoutY="207.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

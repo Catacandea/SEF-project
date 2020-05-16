@@ -10,10 +10,12 @@ public class Customer extends User {
 	private Order actualOrder;
 	private ArrayList<Order> totalOrders = new ArrayList<Order>();
 	private String address;
+	private String fullName;
 
-	public Customer(String username, String phoneNumber, String email, String address) {
+	public Customer(String username, String fullName, String phoneNumber, String email, String address) {
 		super(username, username, email);
 		this.setAddress(address);
+		this.fullName = fullName;
 	}
 
 	public String viewProducts(ArrayList<Product> product) {
@@ -22,6 +24,14 @@ public class Customer extends User {
 			returnValue += auxOrder.toString();
 		}
 		return returnValue;
+	}
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getAddress() {

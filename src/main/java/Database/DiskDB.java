@@ -1,98 +1,220 @@
 package Database;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import Order.Order;
-import Order.Product;
+import Timetable.TimeSlotException;
+import User.Customer;
+import User.DeliveryCompany;
+import User.SupplierCompany;
 
 public class DiskDB {
-	public ArrayList<Product> products = getProductsfromDisk();
-	public ArrayList<Order> orders = getOrdersfromDisk();
-	private static ObjectMapper mapper = new ObjectMapper();
+	// public ArrayList<Product> products = getProductsfromDisk();
+	// public ArrayList<Order> orders = getOrdersfromDisk();
+	// private static ObjectMapper mapper = new ObjectMapper();
 
-	public ArrayList<Product> getProductsfromDisk() {
-		ArrayList<Product> products = null;
-		try {
-			InputStream inputStream = new FileInputStream(
-					new File("/sef-project/src/main/resources/Database/products.json"));
-			TypeReference<ArrayList<Product>> typeReference = new TypeReference<ArrayList<Product>>() {
-			};
-			products = mapper.readValue(inputStream, typeReference);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	/*
+	 * public ArrayList<Product> getProductsfromDisk() { ArrayList<Product> product
+	 * = null; try { InputStream inputStream = new FileInputStream( new
+	 * File("/sef-project/src/main/resources/Database/products.json"));
+	 * TypeReference<ArrayList<Product>> typeReference = new
+	 * TypeReference<ArrayList<Product>>() { }; products =
+	 * mapper.readValue(inputStream, typeReference); } catch (FileNotFoundException
+	 * e) { // TODO Auto-generated catch block e.printStackTrace(); } catch
+	 * (JsonParseException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } catch (JsonMappingException e) { // TODO
+	 * Auto-generated catch block e.printStackTrace(); } catch (IOException e) { //
+	 * TODO Auto-generated catch block e.printStackTrace(); } ;
+	 * 
+	 * return products; }
+	 * 
+	 * public ArrayList<Order> getOrdersfromDisk() { ArrayList<Order> orders = null;
+	 * try { InputStream inputStream = new FileInputStream( new
+	 * File("/sef-project/src/main/resources/Database/orders.json"));
+	 * TypeReference<ArrayList<Product>> typeReference = new
+	 * TypeReference<ArrayList<Product>>() { }; products =
+	 * mapper.readValue(inputStream, typeReference); } catch (FileNotFoundException
+	 * e) { // TODO Auto-generated catch block e.printStackTrace(); } catch
+	 * (JsonParseException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } catch (JsonMappingException e) { // TODO
+	 * Auto-generated catch block e.printStackTrace(); } catch (IOException e) { //
+	 * TODO Auto-generated catch block e.printStackTrace(); } ;
+	 * 
+	 * return orders; }
+	 * 
+	 * public void writeOrdersToDisk(ArrayList<Order> orders) { try { File file =
+	 * new File("/sef-project/src/main/resources/Database/orders.json");
+	 * file.delete(); file.createNewFile(); mapper.writeValue(new
+	 * File("/sef-project/src/main/resources/Database/products.json"), orders); }
+	 * catch (IOException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } }
+	 */
+	private Map<Customer, String> CustomerToPassword = new HashMap<Customer, String>();
+	private Map<SupplierCompany, String> SupplierToPassword = new HashMap<SupplierCompany, String>();
+	private Map<DeliveryCompany, String> DeliveryToPassword = new HashMap<DeliveryCompany, String>();
+
+	public SupplierCompany registerSupplierCompany(String username, String password, int to, int from,
+			String phoneNumber, String address, String email) throws TimeSlotException {
+		SupplierCompany createSupplier = null;
+		if (!username.isEmpty() && !password.isEmpty()) {
+			SupplierCompany searchSupplier = getSupplier(username);
+			if (searchSupplier == null) {
+
+				createSupplier = new SupplierCompany(username, to, from, phoneNumber, address, email);
+				SupplierToPassword.put(createSupplier, password);
+				createSupplier = loginSupplier(username, password);
+			}
+
+		} else {
+			System.out.println("Creation unsuccessful! USERNAME is already taken!Please choose a different username!");
 		}
-		;
 
-		return products;
+		return createSupplier;
+
 	}
 
-	public ArrayList<Order> getOrdersfromDisk() {
-		ArrayList<Order> orders = null;
-		try {
-			InputStream inputStream = new FileInputStream(
-					new File("/sef-project/src/main/resources/Database/orders.json"));
-			TypeReference<ArrayList<Product>> typeReference = new TypeReference<ArrayList<Product>>() {
-			};
-			products = mapper.readValue(inputStream, typeReference);
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		;
+	public DeliveryCompany registerDeliveryCompany(String username, String password, String email, String phoneNumber)
+			throws TimeSlotException {
+		DeliveryCompany createDelivery = null;
+		if (!username.isEmpty() && !password.isEmpty()) {
+			DeliveryCompany searchSupplier = getDelivery(username);
+			if (searchSupplier == null) {
 
-		return orders;
+				createDelivery = new DeliveryCompany(username, email, phoneNumber);
+				DeliveryToPassword.put(createDelivery, password);
+				createDelivery = loginDelivery(username, password);
+			}
+
+		} else {
+			System.out.println("Creation unsuccessful! USERNAME is already taken!Please choose a different username!");
+		}
+
+		return createDelivery;
+
 	}
 
-	public void writeOrdersToDisk(ArrayList<Order> orders) {
-		try {
-			File file = new File("/sef-project/src/main/resources/Database/orders.json");
-			file.delete();
-			file.createNewFile();
-			mapper.writeValue(new File("/sef-project/src/main/resources/Database/products.json"), orders);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public Customer registerCustomer(String username, String password, String fullName, String phoneNumber,
+			String email, String address) {
+		Customer createCustomer = null;
+
+		if (!username.isEmpty() && !password.isEmpty()) {
+			Customer searchCustomer = getCustomer(username);
+			if (searchCustomer == null) {
+
+				createCustomer = new Customer(username, fullName, phoneNumber, email, address);
+				CustomerToPassword.put(createCustomer, password);
+				createCustomer = loginCustomer(username, password);
+			}
+
+		} else {
+			System.out.println("Creation unsuccessful! USERNAME is already taken!Please choose a different username!");
 		}
+
+		return createCustomer;
 	}
 
-	public void writeProductsToDisk(ArrayList<Product> products) {
-		try {
-			File file = new File("/sef-project/src/main/resources/Database/products.json");
-			file.delete();
-			file.createNewFile();
-			mapper.writeValue(new File("/sef-project/src/main/resources/Database/products.json"), products);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+	public Customer loginCustomer(String username, String password) {
+		Customer searchedCustomer = getCustomer(username);
+		Customer returnedCustomer = null;
+		String pass;
+		if (searchedCustomer == null) {
+			System.out.println("Customer does not exist!");
+		} else {
+			pass = CustomerToPassword.get(searchedCustomer);
+			if (password.equals(pass)) {
+				returnedCustomer = searchedCustomer;
+			} else {
+				System.out.println("Password not matching");
+			}
 		}
+		return returnedCustomer;
 	}
+
+	public SupplierCompany loginSupplier(String username, String password) {
+		SupplierCompany searchedSupplier = getSupplier(username);
+		SupplierCompany returnedSupplier = null;
+		String pass;
+		if (searchedSupplier == null) {
+			System.out.println("Supplier Company does not exist!");
+		} else {
+			pass = SupplierToPassword.get(searchedSupplier);
+			if (password.equals(pass)) {
+				returnedSupplier = searchedSupplier;
+			} else {
+				System.out.println("Password not matching");
+			}
+		}
+		return returnedSupplier;
+	}
+
+	public DeliveryCompany loginDelivery(String username, String password) {
+		DeliveryCompany searchedDelivery = getDelivery(username);
+		DeliveryCompany returnedDelivery = null;
+		String pass;
+		if (searchedDelivery == null) {
+			System.out.println("Delivery Company does not exist!");
+		} else {
+			pass = DeliveryToPassword.get(searchedDelivery);
+			if (password.equals(pass)) {
+				returnedDelivery = searchedDelivery;
+			} else {
+				System.out.println("Password not matching");
+			}
+		}
+		return returnedDelivery;
+	}
+
+	/**
+	 * Finds the customer based on the username.
+	 * 
+	 * @param username
+	 * @return
+	 */
+	private Customer getCustomer(String username) {
+		Customer result = null;
+		Set<Customer> customers = CustomerToPassword.keySet();
+		for (Customer customer : customers) {
+			String heroName = customer.getUsername();
+			if (heroName.equals(username)) {
+				result = customer;
+				break;
+			}
+		}
+		return result;
+	}
+
+	private SupplierCompany getSupplier(String username) {
+		SupplierCompany result = null;
+		Set<SupplierCompany> suppliers = SupplierToPassword.keySet();
+		for (SupplierCompany supplier : suppliers) {
+			String SupplierName = supplier.getUsername();
+			if (SupplierName.equals(username)) {
+				result = supplier;
+				break;
+			}
+		}
+		return result;
+	}
+
+	private DeliveryCompany getDelivery(String username) {
+		DeliveryCompany result = null;
+		Set<DeliveryCompany> deliveries = DeliveryToPassword.keySet();
+		for (DeliveryCompany delivery : deliveries) {
+			String deliveryName = delivery.getUsername();
+			if (deliveryName.equals(username)) {
+				result = delivery;
+				break;
+			}
+		}
+		return result;
+	}
+
+	/*
+	 * public void writeProductsToDisk(ArrayList<Product> productlist) { try { File
+	 * file = new File("products.json"); /* file.delete(); file.createNewFile();
+	 * 
+	 * String m = "Da frate"; mapper.writeValue(file, m); } catch (IOException e) {
+	 * e.printStackTrace(); } }
+	 */
 }

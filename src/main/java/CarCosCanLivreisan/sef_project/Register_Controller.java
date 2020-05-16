@@ -51,7 +51,6 @@ public class Register_Controller {
 	private TextField fromHour;
 	@FXML
 	private TextField toHour;
-//	
 	
 	
 
@@ -168,9 +167,11 @@ public class Register_Controller {
         Parent LogOutView = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         Scene LogOutScene = new Scene(LogOutView);
 
+        AlertBox.display("Sign out","Are you sure you want to sign out?");
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
        
-        window.close();
+        window.show();
+        //window.close();
     }
 
 }

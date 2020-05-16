@@ -22,7 +22,7 @@
    <bottom>
       <AnchorPane prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="512.0" layoutY="5.0" mnemonicParsing="false" onAction="#LogOutButtonClicked" text="Sign out" />
+            <Button fx:id="SignOut" layoutX="512.0" layoutY="5.0" mnemonicParsing="false" onAction="#LogOutButtonClicked" text="Sign out" />
          </children>
       </AnchorPane>
    </bottom>

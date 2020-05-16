@@ -1,4 +1,4 @@
-package GUI;
+package CarCosCanLivreisan.sef_project;
 import javafx.stage.*;
 import javafx.scene.*;
 import javafx.scene.layout.*;

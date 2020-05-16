@@ -15,8 +15,7 @@ public class DeliveryPage_Controller {
 	       Scene LogOutScene = new Scene(LogOutView);
 
 	       Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-	       //window.setScene(LogOutScene);
-	       //window.show();
+	       
 	       window.close();
 	   }
 

@@ -34,12 +34,12 @@
             <Text layoutX="110.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name" />
             <Text layoutX="86.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email address" />
             <Text layoutX="73.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
-            <PasswordField layoutX="194.0" layoutY="81.0" />
+            <PasswordField fx:id="passwordCustomerRegister" layoutX="194.0" layoutY="81.0" />
             <Button layoutX="251.0" layoutY="254.0" mnemonicParsing="false" onAction="#HomePageCustomer" text="Register" />
-            <TextField layoutX="195.0" layoutY="36.0" />
-            <TextField layoutX="195.0" layoutY="121.0" />
-            <TextField layoutX="194.0" layoutY="163.0" />
-            <TextField layoutX="194.0" layoutY="207.0" />
+            <TextField fx:id="usernameCustomerRegister" layoutX="195.0" layoutY="36.0" />
+            <TextField fx:id="fullnameCustomerRegister" layoutX="195.0" layoutY="121.0" />
+            <TextField fx:id="emailCustomerRegister" layoutX="194.0" layoutY="163.0" />
+            <TextField fx:id="phoneCustomerRegister" layoutX="194.0" layoutY="207.0" />
          </children>
       </AnchorPane>
    </center>

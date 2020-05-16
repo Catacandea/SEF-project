@@ -35,6 +35,9 @@
             <Text layoutX="101.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
             <PasswordField layoutX="207.0" layoutY="83.0" />
             <Button layoutX="268.0" layoutY="235.0" mnemonicParsing="false" onAction="#HomePageSupply" text="Register" />
+            <TextField layoutX="207.0" layoutY="37.0" />
+            <TextField layoutX="207.0" layoutY="134.0" />
+            <PasswordField layoutX="207.0" layoutY="184.0" />
          </children></AnchorPane>
    </center>
 </BorderPane>

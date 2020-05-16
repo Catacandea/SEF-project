@@ -7,9 +7,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class Register_Controller {
+	
+	private TextField usernameCustomerRegister;
+	private TextField phoneCustomerRegister;
+	
 
     public void BackHomeViewButoonClicked(ActionEvent event) throws IOException
     {
@@ -45,7 +50,7 @@ public class Register_Controller {
     {
         Parent RegisterCustomerView = FXMLLoader.load(getClass().getResource("RegisterCustomer.fxml"));
         Scene RegisterCustomerScene = new Scene(RegisterCustomerView);
-
+        
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(RegisterCustomerScene);
         window.show();
@@ -98,8 +103,7 @@ public class Register_Controller {
         Scene LogOutScene = new Scene(LogOutView);
 
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        //window.setScene(LogOutScene);
-        //window.show();
+       
         window.close();
     }
 

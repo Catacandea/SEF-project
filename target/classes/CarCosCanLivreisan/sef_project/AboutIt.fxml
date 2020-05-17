@@ -33,7 +33,7 @@
             </Text>
             <ImageView fitHeight="330.0" fitWidth="479.0" layoutX="35.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@grinch_lead_lots_of_white_space.png" />
+                  <Image url="@../../../../../../../../../OS/grinch.png" />
                </image>
             </ImageView>
          </children>

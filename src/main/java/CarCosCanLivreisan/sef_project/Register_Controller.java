@@ -107,7 +107,6 @@ public class Register_Controller {
         window.show();
     }
     
-
     public void HomePageCustomer(ActionEvent event) throws IOException
     {
         Parent CustomerHomePageView = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
@@ -119,7 +118,8 @@ public class Register_Controller {
         
         else 
         {
-        Customer customer = new Customer(userCustomer.getText(), nameCustomer.getText(), phoneCustomer.getText(), emailCustomer.getText(), addressCustomer.getText());
+        DiskDB db = new DiskDB();
+        Customer customer = db.registerCustomer(userCustomer.getText(), passwordCustomer.getText(), nameCustomer.getText(), phoneCustomer.getText(), emailCustomer.getText(), addressCustomer.getText());
         
         //daca nu ii in baza de date si toate campurile is completate merge mai jos
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -140,7 +140,8 @@ public class Register_Controller {
         
         else 
         {
-        	DiskDB db = new DiskDB();
+        DiskDB db = new DiskDB();
+        //sp == null
         SupplierCompany sp = db.registerSupplierCompany(userSupply.getText(),passwordSupply.getText(), Integer.parseInt(fromHour.getText()), Integer.parseInt(toHour.getText()),phoneSupply.getText(),addressSupply.getText(), emailSupply.getText());
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(SupplyHomePageScene);
@@ -148,7 +149,7 @@ public class Register_Controller {
         }
     }
 
-    public void HomePageDelivery(ActionEvent event) throws IOException
+    public void HomePageDelivery(ActionEvent event) throws IOException, TimeSlotException
     {
         Parent DeliveryHomePageView = FXMLLoader.load(getClass().getResource("DeliveryCompanyHomePage.fxml"));
         Scene DeliveryHomePageScene = new Scene(DeliveryHomePageView);
@@ -159,8 +160,8 @@ public class Register_Controller {
         
         else 
         {
-	     
-	    DeliveryCompany dc = new DeliveryCompany(userDelivery.getText(),emailDelivery.getText(),phoneDelivery.getText());
+        DiskDB db = new DiskDB();
+	    DeliveryCompany dc = db.registerDeliveryCompany(userDelivery.getText(),passwordDelivery.getText(),emailDelivery.getText(),phoneDelivery.getText());
 	        
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(DeliveryHomePageScene);

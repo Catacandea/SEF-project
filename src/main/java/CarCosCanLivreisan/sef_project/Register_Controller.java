@@ -132,7 +132,9 @@ public class Register_Controller {
 				|| emailSupply.getText().equals("") || addressSupply.getText().equals("")
 				|| fromHour.getText().equals("") || toHour.getText().equals(""))
 			AlertBox.display("Register", "Please insert the data in every field");
-
+		
+		else if( !(fromHour.getText().matches("[0-9]+")) || !(toHour.getText().matches("[0-9]+")))
+			AlertBox.display("Register", "Please insert the correct hours");
 		else {
 			DiskDB db = new DiskDB();
 			// sp == null

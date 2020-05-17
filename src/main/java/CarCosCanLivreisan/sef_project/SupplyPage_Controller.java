@@ -1,20 +1,36 @@
 package CarCosCanLivreisan.sef_project;
 import java.io.IOException;
 
+import Order.Product;
+import User.SupplierCompany;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class SupplyPage_Controller {
 	
 	@FXML
-	private ListView<String> myProductsList;
+	private TextField nameProduct;
+	@FXML
+	private TextField priceProduct;
+	@FXML
+	private CheckBox drugsType;
+	@FXML
+	private CheckBox foodType;
+	@FXML
+	private CheckBox clothingType;
+	
+	SupplierCompany sp;
+	sp = new SupplierCompany("Supplier1", 5, 10, "1111111111", "emailsupp1@yahoo.com", "First street");
 	
 	public void LogOutButtonClicked(ActionEvent event) throws IOException {
 	       Parent LogOutView = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
@@ -35,11 +51,7 @@ public class SupplyPage_Controller {
 	 {
 	    Parent ViewProductsView = FXMLLoader.load(getClass().getResource("SupplyCompany_Products.fxml"));
 	    Scene ViewProductsScene = new Scene(ViewProductsView);
-	    Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-	    
-	    
-//		myProductsList.getItems().addAll("Ce","Faci","Dragos");
-//		myProductsList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);		    
+	    Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();	    
 		
 	    window.setScene(ViewProductsScene);       
 	    window.show();
@@ -50,13 +62,26 @@ public class SupplyPage_Controller {
 	    Parent AddProductView = FXMLLoader.load(getClass().getResource("SupplyCompany_AddProduct.fxml"));
 	    Scene AddProductScene = new Scene(AddProductView);
 	    Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-	       
-//		myProductsList.getItems().addAll("Ce","Faci","Dragos");
-//		myProductsList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);		    
-		
+	    
 	    window.setScene(AddProductScene);       
 	    window.show();
-	   }
+	 }
+	 public void AddedProduct (ActionEvent event) throws IOException
+	 {
+		 Parent AddedProductView = FXMLLoader.load(getClass().getResource("SupplyCompanyHomePage.fxml"));
+		 Scene AddedProductScene = new Scene(AddedProductView);
+		 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+		 
+		 if(nameProduct.getText().equals("") || priceProduct.getText().equals(""))
+			 AlertBox.display("Add product", "Please insert data in every field!");
+		 else 
+			 {
+			// sp.addProduct(new Product(nameProduct.getText(), priceProduct.getText()),ProductEnum.typeEnum());
+			 AlertBox.display("Add product", "The product was added.");
+			 window.setScene(AddedProductScene);       
+			 window.show();
+			 }
+	 }
 	 
 	 public void BackSupplyHomeViewButoonClicked(ActionEvent event) throws IOException
 	    {

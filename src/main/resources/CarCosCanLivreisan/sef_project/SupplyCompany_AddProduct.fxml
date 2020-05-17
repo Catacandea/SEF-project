@@ -32,9 +32,12 @@
             <Text layoutX="106.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
             <Text layoutX="110.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
             <Text layoutX="106.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
-            <ListView fx:id="typProduct" layoutX="180.0" layoutY="105.0" prefHeight="43.0" prefWidth="138.0" />
             <TextField fx:id="nameProduct" layoutX="180.0" layoutY="50.0" />
             <TextField fx:id="priceProduct" layoutX="180.0" layoutY="178.0" />
+            <Button layoutX="241.0" layoutY="246.0" mnemonicParsing="false" onAction="#AddedProduct" text="Add Product" />
+            <CheckBox fx:id="typeDrugs" layoutX="180.0" layoutY="125.0" mnemonicParsing="false" text="Drugs" />
+            <CheckBox fx:id="typeFood" layoutX="274.0" layoutY="125.0" mnemonicParsing="false" text="Food" />
+            <CheckBox fx:id="typeClothing" layoutX="367.0" layoutY="125.0" mnemonicParsing="false" text="Clothing" />
          </children></AnchorPane>
    </center>
 </BorderPane>

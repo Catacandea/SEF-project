@@ -113,18 +113,19 @@ public class Register_Controller {
         Parent CustomerHomePageView = FXMLLoader.load(getClass().getResource("CustomerHomePage.fxml"));
         Scene CustomerHomePageScene = new Scene(CustomerHomePageView);
         
-        //printeaza ce ia din field-uri
-//        System.out.println(userCustomer.getText());
-//        System.out.println(passwordCustomer.getText());
-//        System.out.println(emailCustomer.getText());
-//        System.out.println(phoneCustomer.getText());
-//        System.out.println(addressCustomer.getText());
+        if(userCustomer.getText().equals("") || nameCustomer.getText().equals("") || passwordCustomer.getText().equals("")
+        		||phoneCustomer.getText().equals("") || emailCustomer.getText().equals("") || addressCustomer.getText().equals(""))
+        	AlertBox.display("Register","Please insert the data in every field");
         
+        else 
+        {
         Customer customer = new Customer(userCustomer.getText(), nameCustomer.getText(), phoneCustomer.getText(), emailCustomer.getText(), addressCustomer.getText());
+        
         //daca nu ii in baza de date si toate campurile is completate merge mai jos
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(CustomerHomePageScene);
         window.show();
+        }
         
     }
 
@@ -132,23 +133,19 @@ public class Register_Controller {
     {
         Parent SupplyHomePageView = FXMLLoader.load(getClass().getResource("SupplyCompanyHomePage.fxml"));
         Scene SupplyHomePageScene = new Scene(SupplyHomePageView);
-
-        //printeaza ce ia din field-uri
-//      System.out.println(userSupply.getText());
-//      System.out.println(passwordSupply.getText());
-//      System.out.println(emailSupply.getText());
-//      System.out.println(phoneSupply.getText());
-//      System.out.println(addressSupply.getText());
-//      System.out.println(fromHour.getText());
-//      System.out.println(toHour.getText());    
         
-        DiskDB db = new DiskDB();
+        if(userSupply.getText().equals("") || passwordSupply.getText().equals("") ||phoneSupply.getText().equals("") 
+        		|| emailSupply.getText().equals("") || addressSupply.getText().equals("") || fromHour.getText().equals("") || toHour.getText().equals(""))
+        	AlertBox.display("Register","Please insert the data in every field");
         
-        
+        else 
+        {
+        	DiskDB db = new DiskDB();
         SupplierCompany sp = db.registerSupplierCompany(userSupply.getText(),passwordSupply.getText(), Integer.parseInt(fromHour.getText()), Integer.parseInt(toHour.getText()),phoneSupply.getText(),addressSupply.getText(), emailSupply.getText());
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(SupplyHomePageScene);
         window.show();
+        }
     }
 
     public void HomePageDelivery(ActionEvent event) throws IOException
@@ -156,16 +153,19 @@ public class Register_Controller {
         Parent DeliveryHomePageView = FXMLLoader.load(getClass().getResource("DeliveryCompanyHomePage.fxml"));
         Scene DeliveryHomePageScene = new Scene(DeliveryHomePageView);
 	
-//	    System.out.println(userDelivery.getText());
-//	    System.out.println(passwordDelivery.getText());
-//	    System.out.println(emailDelivery.getText());
-//	    System.out.println(phoneDelivery.getText());
+        if(userDelivery.getText().equals("") || passwordDelivery.getText().equals("")
+        		||phoneDelivery.getText().equals("") || emailDelivery.getText().equals(""))
+        	AlertBox.display("Register","Please insert the data in every field");
+        
+        else 
+        {
 	     
 	    DeliveryCompany dc = new DeliveryCompany(userDelivery.getText(),emailDelivery.getText(),phoneDelivery.getText());
 	        
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(DeliveryHomePageScene);
         window.show();
+        }
     }
     
    

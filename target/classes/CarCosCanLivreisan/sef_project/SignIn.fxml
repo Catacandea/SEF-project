@@ -9,32 +9,44 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.SignIn_Controller">
    <top>
-      <AnchorPane prefHeight="75.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="85.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="14.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In" textAlignment="CENTER" wrappingWidth="563.5126953125">
+            <Text fill="#4fff52" fontSmoothingType="LCD" stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="OUTSIDE" text="Sign In" textAlignment="CENTER" wrappingWidth="599.02734375">
                <font>
-                  <Font size="34.0" />
+                  <Font size="53.0" />
                </font>
             </Text>
          </children>
-      </AnchorPane>
+      </VBox>
    </top>
-   <bottom>
-      <AnchorPane prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutX="517.0" layoutY="9.0" mnemonicParsing="false" onAction="#BackHomeViewButoonClicked" text="Back" />
-         </children>
-      </AnchorPane>
-   </bottom>
    <center>
-      <AnchorPane prefHeight="244.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="127.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="70.61376953125" />
-            <Text layoutX="131.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <Button layoutX="250.0" layoutY="223.0" mnemonicParsing="false" text="Sign In" />
-            <TextField layoutX="214.0" layoutY="80.0" />
-            <PasswordField layoutX="214.0" layoutY="148.0" />
+            <Region prefHeight="55.0" prefWidth="150.0" />
+            <Button fx:id="SignInCustomer" alignment="CENTER" mnemonicParsing="false" onAction="#SignInCustomerButoonClicked" text="Customer" />
+            <Region prefHeight="43.0" prefWidth="600.0" />
+            <Button fx:id="SignInSupply" mnemonicParsing="false" onAction="#SignInSupplyButoonClicked" text="Supply Company" />
+            <Region prefHeight="53.0" prefWidth="600.0" />
+            <Button fx:id="SignInDelivery" mnemonicParsing="false" onAction="#SignInDeliveryButoonClicked" text="Delivery Company" />
+            <Region prefHeight="42.0" prefWidth="600.0" />
          </children>
-      </AnchorPane>
+      </VBox>
    </center>
+   <left>
+      <Region prefHeight="315.0" prefWidth="250.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <VBox prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="525.0" layoutY="9.0" mnemonicParsing="false" onAction="#BackHomeViewButoonClicked" text="Back" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </bottom>
 </BorderPane>

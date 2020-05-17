@@ -9,11 +9,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.HomePage_Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.HomePage_Controller">
    <top>
       <VBox prefHeight="38.0" prefWidth="593.0" style="-fx-background-color: #330080;" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="77.0" prefWidth="593.0">
                <children>
                   <Region layoutX="84.0" layoutY="10.0" prefHeight="38.0" prefWidth="17.0" />
                   <Button layoutX="139.0" layoutY="10.0" mnemonicParsing="false" onAction="#AboutItButoonClicked" style="-fx-font-family: western;" text="About it" />
@@ -30,4 +30,15 @@
    <bottom>
       <HBox BorderPane.alignment="CENTER" />
    </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="514.0" fitWidth="701.0" layoutX="1.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../../../../Poze/2mhyna.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

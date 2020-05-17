@@ -29,8 +29,13 @@
    <center>
       <AnchorPane prefHeight="245.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
+<<<<<<< HEAD
             <Button fx:id="viewProducts" layoutX="94.0" layoutY="52.0" mnemonicParsing="false" onAction="#ViewProductsButtonClicked" text="View my products" />
             <Button fx:id="timeTable" layoutX="94.0" layoutY="145.0" mnemonicParsing="false" text="Timetabe" />
+=======
+            <Button layoutX="94.0" layoutY="52.0" mnemonicParsing="false" onAction="#ViewProductsButtonClicked" text="View my products" />
+            <Button layoutX="94.0" layoutY="145.0" mnemonicParsing="false" text="Timetabe" />
+>>>>>>> master
          </children>
       </AnchorPane>
    </center>

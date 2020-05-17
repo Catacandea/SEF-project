@@ -29,8 +29,6 @@ public class SupplyPage_Controller {
 	@FXML
 	private CheckBox clothingType;
 	
-	SupplierCompany sp;
-	sp = new SupplierCompany("Supplier1", 5, 10, "1111111111", "emailsupp1@yahoo.com", "First street");
 	
 	public void LogOutButtonClicked(ActionEvent event) throws IOException {
 	       Parent LogOutView = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

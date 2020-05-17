@@ -54,6 +54,38 @@ public class DiskDB {
 	private Map<SupplierCompany, String> SupplierToPassword = new HashMap<SupplierCompany, String>();
 	private Map<DeliveryCompany, String> DeliveryToPassword = new HashMap<DeliveryCompany, String>();
 
+	public DiskDB() {
+		Customer c1 = new Customer("Customer1", "Customer1 fullname", "1111111111", "email1@yahoo.com", "First street");
+		Customer c2 = new Customer("Customer2", "Customer2 fullname", "2222222222", "email2@yahoo.com", "2nd street");
+		Customer c3 = new Customer("Customer3", "Customer3 fullname", "3333333333", "email3@yahoo.com", "3rd street");
+		CustomerToPassword.put(c1, "password1");
+		CustomerToPassword.put(c2, "password2");
+		CustomerToPassword.put(c3, "password3");
+		SupplierCompany s1;
+		try {
+			s1 = new SupplierCompany("Supplier1", 5, 10, "1111111111", "emailsupp1@yahoo.com", "First street");
+			SupplierCompany s2 = new SupplierCompany("Supplier2", 2, 11, "2222222222", "emailsupp2@yahoo.com",
+					"2nd street");
+			SupplierCompany s3 = new SupplierCompany("Supplier3", 10, 20, "3333333333", "emailsupp3@yahoo.com",
+					"3rd street");
+
+			SupplierToPassword.put(s1, "password1");
+			SupplierToPassword.put(s2, "password2");
+			SupplierToPassword.put(s3, "password3");
+		} catch (TimeSlotException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		DeliveryCompany d1 = new DeliveryCompany("Delivery1", "emailsupp1@yahoo.com", "1111111111");
+		DeliveryCompany d2 = new DeliveryCompany("Delivery2", "emailsupp2@yahoo.com", "2222222222");
+		DeliveryCompany d3 = new DeliveryCompany("Delivery3", "emailsupp3@yahoo.com", "3333333333");
+		DeliveryToPassword.put(d1, "password1");
+		DeliveryToPassword.put(d2, "password2");
+		DeliveryToPassword.put(d3, "password3");
+
+	}
+
 	public SupplierCompany registerSupplierCompany(String username, String password, int to, int from,
 			String phoneNumber, String address, String email) throws TimeSlotException {
 		SupplierCompany createSupplier = null;

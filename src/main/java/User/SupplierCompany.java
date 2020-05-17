@@ -81,4 +81,20 @@ public class SupplierCompany extends User {
 				+ this.getAddress() + ",email : " + this.getEmail() + "\n";
 		return returnValue;
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (o == this) {
+			return true;
+		} else if (!(o instanceof SupplierCompany)) {
+			return false;
+		} else {
+			SupplierCompany c = (SupplierCompany) o;
+			if (c.getUsername() == this.getUsername()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
 }

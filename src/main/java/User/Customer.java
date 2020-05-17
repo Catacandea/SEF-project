@@ -69,7 +69,21 @@ public class Customer extends User {
 
 	public Order placeOrder() {
 		return actualOrder;
-
 	}
 
+	@Override
+	public boolean equals(Object o) {
+		if (o == this) {
+			return true;
+		} else if (!(o instanceof Customer)) {
+			return false;
+		} else {
+			Customer c = (Customer) o;
+			if (c.getUsername() == this.getUsername()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
 }

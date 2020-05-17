@@ -53,4 +53,30 @@ public class DeliveryCompany extends User {
 		return aux;
 	}
 
+	@Override
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	@Override
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (o == this) {
+			return true;
+		} else if (!(o instanceof DeliveryCompany)) {
+			return false;
+		} else {
+			DeliveryCompany c = (DeliveryCompany) o;
+			if (c.getUsername() == this.getUsername()) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+
 }

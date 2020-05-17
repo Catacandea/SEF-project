@@ -115,11 +115,14 @@ public class Register_Controller {
 			Customer customer = db.registerCustomer(userCustomer.getText(), passwordCustomer.getText(),
 					nameCustomer.getText(), phoneCustomer.getText(), emailCustomer.getText(),
 					addressCustomer.getText());
-
-			// daca nu ii in baza de date si toate campurile is completate merge mai jos
+			if(customer == null)
+				AlertBox.display("Register Customer", "The user already exists!");
+			else
+			{
 			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			window.setScene(CustomerHomePageScene);
 			window.show();
+			}
 		}
 
 	}
@@ -141,9 +144,14 @@ public class Register_Controller {
 			SupplierCompany sp = db.registerSupplierCompany(userSupply.getText(), passwordSupply.getText(),
 					Integer.parseInt(fromHour.getText()), Integer.parseInt(toHour.getText()), phoneSupply.getText(),
 					addressSupply.getText(), emailSupply.getText());
+			if(sp == null)
+				AlertBox.display("Register Supply Company", "The user already exists!");
+			else
+			{
 			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			window.setScene(SupplyHomePageScene);
 			window.show();
+			}
 		}
 	}
 
@@ -159,10 +167,14 @@ public class Register_Controller {
 			DiskDB db = new DiskDB();
 			DeliveryCompany dc = db.registerDeliveryCompany(userDelivery.getText(), passwordDelivery.getText(),
 					emailDelivery.getText(), phoneDelivery.getText());
-
+			if(dc == null)
+				AlertBox.display("Register Delivery Company", "The user already exists!");
+			else
+			{
 			Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 			window.setScene(DeliveryHomePageScene);
 			window.show();
+			}
 		}
 	}
 

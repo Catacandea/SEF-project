@@ -32,7 +32,7 @@
          <children>
             <Text layoutX="127.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="70.61376953125" />
             <Text layoutX="131.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <Button layoutX="250.0" layoutY="223.0" mnemonicParsing="false" text="Sign In" />
+            <Button layoutX="250.0" layoutY="223.0" mnemonicParsing="false" onAction="#HomePageDelivery" text="Sign In" />
             <TextField fx:id="userSignInDelivery" layoutX="214.0" layoutY="80.0" />
             <PasswordField fx:id="passwordSignInDelivery" layoutX="214.0" layoutY="148.0" />
          </children>

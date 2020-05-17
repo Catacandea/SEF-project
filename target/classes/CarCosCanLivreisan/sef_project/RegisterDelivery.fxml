@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.Register_Controller">
+   <top>
+      <AnchorPane prefHeight="64.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register Delivery" textAlignment="CENTER" wrappingWidth="550.6708984375">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="495.0" layoutY="5.0" mnemonicParsing="false" onAction="#BackRegisterViewButoonClicked" text="Back" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="113.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+            <Text layoutX="113.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <Text layoutX="99.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email address" />
+            <Text layoutX="96.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone Number" />
+            <PasswordField fx:id="passwordDelivery" layoutX="207.0" layoutY="85.0" />
+            <Button layoutX="255.0" layoutY="243.0" mnemonicParsing="false" onAction="#HomePageDelivery" text="Register" />
+            <TextField fx:id="userDelivery" layoutX="207.0" layoutY="39.0" />
+            <TextField fx:id="emailDelivery" layoutX="207.0" layoutY="133.0" />
+            <TextField fx:id="phoneDelivery" layoutX="207.0" layoutY="177.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -8,13 +9,6 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.AboutIt_Controller">
-   <center>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Something about the application " BorderPane.alignment="CENTER">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Text>
-   </center>
    <top>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="About it..." wrappingWidth="591.80908203125" BorderPane.alignment="CENTER">
          <font>
@@ -25,8 +19,24 @@
    <bottom>
       <AnchorPane prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="510.0" layoutY="9.0" mnemonicParsing="false" onAction="#BackHomeViewButoonClicked" text="Back" />
+            <Button layoutX="535.0" layoutY="9.0" mnemonicParsing="false" onAction="#BackHomeViewButoonClicked" text="Back" />
          </children>
       </AnchorPane>
    </bottom>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="35.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Its behavoir it's like Grinch :)" wrappingWidth="415.6181640625">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="330.0" fitWidth="479.0" layoutX="35.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@grinch_lead_lots_of_white_space.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>

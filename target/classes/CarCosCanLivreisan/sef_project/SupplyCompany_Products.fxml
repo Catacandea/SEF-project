@@ -9,11 +9,11 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.SupplyPage_Controller">
    <top>
-      <AnchorPane prefHeight="29.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="74.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Text layoutX="14.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My products">
+            <Text layoutX="26.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My products">
                <font>
-                  <Font size="28.0" />
+                  <Font size="42.0" />
                </font>
             </Text>
          </children>
@@ -27,9 +27,6 @@
       </AnchorPane>
    </bottom>
    <center>
-      <AnchorPane prefHeight="245.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <ListView fx:id="myProductsList" layoutX="20.0" prefHeight="297.0" prefWidth="419.0" />
-         </children></AnchorPane>
+      <AnchorPane prefHeight="245.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

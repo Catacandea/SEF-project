@@ -2,6 +2,7 @@ package CarCosCanLivreisan.sef_project;
 
 import java.io.IOException;
 
+import Database.DiskDB;
 import Timetable.TimeSlotException;
 import User.*;
 
@@ -27,6 +28,8 @@ public class Register_Controller {
 	private TextField phoneCustomer;
 	@FXML
 	private TextField addressCustomer;
+	@FXML
+	private TextField nameCustomer;
 	
 	@FXML
 	private TextField userDelivery;
@@ -117,8 +120,8 @@ public class Register_Controller {
 //        System.out.println(phoneCustomer.getText());
 //        System.out.println(addressCustomer.getText());
         
-        Customer customer = new Customer(userCustomer.getText(), phoneCustomer.getText(), emailCustomer.getText(), addressCustomer.getText());
-   
+        Customer customer = new Customer(userCustomer.getText(), nameCustomer.getText(), phoneCustomer.getText(), emailCustomer.getText(), addressCustomer.getText());
+        //daca nu ii in baza de date si toate campurile is completate merge mai jos
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(CustomerHomePageScene);
         window.show();
@@ -139,7 +142,10 @@ public class Register_Controller {
 //      System.out.println(fromHour.getText());
 //      System.out.println(toHour.getText());    
         
-      SupplierCompany sp = new SupplierCompany (userSupply.getText(), Integer.parseInt(fromHour.getText()), Integer.parseInt(toHour.getText()),phoneSupply.getText(),addressSupply.getText(), emailSupply.getText());
+        DiskDB db = new DiskDB();
+        
+        
+        SupplierCompany sp = db.registerSupplierCompany(userSupply.getText(),passwordSupply.getText(), Integer.parseInt(fromHour.getText()), Integer.parseInt(toHour.getText()),phoneSupply.getText(),addressSupply.getText(), emailSupply.getText());
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(SupplyHomePageScene);
         window.show();

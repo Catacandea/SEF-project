@@ -56,7 +56,7 @@ public class DeliveryCompanyTest {
 	@Test
 	public void testFinishOrder() {
 		DeliveryCompany test = new DeliveryCompany("Dorel", "0792694202", "Dorel@yahoo.com");
-		Customer customer = new Customer("Eu", "random", "random", "random");
+		Customer customer = new Customer("Eu", "random","random", "random", "random");
 		Order order = new Order(test, customer);
 		Product product = new Product("Autofiletanta", test, ProductEnum.CLOTHING, 600);
 		order.addProduct(product);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarCosCanLivreisan.sef_project.SupplyPage_Controller">
+   <top>
+      <AnchorPane prefHeight="29.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fontSmoothingType="LCD" layoutX="50.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add a product">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="517.0" layoutY="14.0" mnemonicParsing="false" onAction="#BackSupplyHomeViewButoonClicked" text="Back" />
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="245.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="106.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+            <Text layoutX="110.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" />
+            <Text layoutX="106.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price" />
+            <ListView fx:id="typProduct" layoutX="180.0" layoutY="105.0" prefHeight="43.0" prefWidth="138.0" />
+            <TextField fx:id="nameProduct" layoutX="180.0" layoutY="50.0" />
+            <TextField fx:id="priceProduct" layoutX="180.0" layoutY="178.0" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>

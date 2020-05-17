@@ -45,6 +45,19 @@ public class SupplyPage_Controller {
 	    window.show();
 	   }
 	 
+	 public void AddProductButtonClicked(ActionEvent event) throws IOException 
+	 {
+	    Parent AddProductView = FXMLLoader.load(getClass().getResource("SupplyCompany_AddProduct.fxml"));
+	    Scene AddProductScene = new Scene(AddProductView);
+	    Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+	       
+//		myProductsList.getItems().addAll("Ce","Faci","Dragos");
+//		myProductsList.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);		    
+		
+	    window.setScene(AddProductScene);       
+	    window.show();
+	   }
+	 
 	 public void BackSupplyHomeViewButoonClicked(ActionEvent event) throws IOException
 	    {
 	        Parent HomePageView = FXMLLoader.load(getClass().getResource("SupplyCompanyHomePage.fxml"));

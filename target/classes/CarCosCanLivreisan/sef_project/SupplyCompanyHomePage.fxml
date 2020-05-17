@@ -29,8 +29,10 @@
    <center>
       <AnchorPane prefHeight="245.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="viewProducts" layoutX="94.0" layoutY="52.0" mnemonicParsing="false" onAction="#ViewProductsButtonClicked" text="View my products" />
-            <Button fx:id="timeTable" layoutX="94.0" layoutY="145.0" mnemonicParsing="false" text="Timetabe" />
+            <Button fx:id="viewProducts" layoutX="38.0" layoutY="43.0" mnemonicParsing="false" onAction="#ViewProductsButtonClicked" text="View my products" />
+            <Button fx:id="timeTable" layoutX="372.0" layoutY="43.0" mnemonicParsing="false" text="Edit timetable" />
+            <Button layoutX="34.0" layoutY="118.0" mnemonicParsing="false" onAction="#AddProductButtonClicked" text="Add a new product" />
+            <Button layoutX="34.0" layoutY="204.0" mnemonicParsing="false" text="Delete a product" />
          </children>
       </AnchorPane>
    </center>

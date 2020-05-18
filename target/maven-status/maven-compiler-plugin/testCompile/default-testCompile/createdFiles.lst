@@ -1,0 +1,7 @@
+Order\OrderTest.class
+Review\ReviewTest.class
+Timetable\TimetableTest.class
+User\CustomerTest.class
+User\DeliveryCompanyTest.class
+Timetable\TimeSlotTest.class
+User\SupplierCompanyTest.class
